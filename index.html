@@ -129,6 +129,15 @@
       text-align: center;
       background-image: url("CMED_fundo.png");
     }
+   .card {
+  animation: flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
 
     .card p {
              color: white;
@@ -200,6 +209,7 @@
 
 </body>
 </html>
+
 
 
 
