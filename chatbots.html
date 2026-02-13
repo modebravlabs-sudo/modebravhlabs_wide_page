@@ -164,114 +164,130 @@ function botReply(text) {
     const lowerText = text.toLowerCase();
 
    // Saudações e Identidade
-if (lowerText.includes("oi") || lowerText.includes("olá")) 
+// Função para normalizar texto (minúsculas + sem acentos)
+function normalizeText(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, ""); // remove acentos
+}
+
+let lowerText = normalizeText(userInput);
+
+// Função auxiliar para verificar se alguma palavra-chave aparece
+function matchKeywords(text, keywords) {
+  return keywords.some(keyword => text.includes(keyword));
+}
+
+// Saudações e Identidade
+if (matchKeywords(lowerText, ["oi", "ola", "olá", "bom dia", "boa tarde", "boa noite"])) 
   reply = "Olá! Eu sou o assistente da modeBRAVLabs. Sobre o que você quer conversar hoje?";
 
-if (lowerText.includes("modebravlabs")) 
+if (matchKeywords(lowerText, ["modebravlabs", "mode brav labs"])) 
   reply = "modeBRAVLabs é uma empresa dedicada ao uso da tecnologia para melhorar foco, evolução pessoal, produtividade e persuasão.";
 
-if (lowerText.includes("henrique joão muianga") || lowerText.includes("ceo")) 
+if (matchKeywords(lowerText, ["henrique joao muianga", "ceo", "fundador"])) 
   reply = "Henrique João Muianga é o CEO da modeBRAVLabs, liderando projetos que unem tecnologia e desenvolvimento pessoal.";
 
 // Tecnologia
-if (lowerText.includes("python")) 
+if (matchKeywords(lowerText, ["python", "py"])) 
   reply = "Python é excelente para automação, IA e desenvolvimento web.";
 
-if (lowerText.includes("dev_attach") || lowerText.includes("desenvolvimento web")) 
+if (matchKeywords(lowerText, ["dev_attach", "desenvolvimento web", "web dev", "programacao web"])) 
   reply = "Desenvolvimento web envolve HTML, CSS, JS e frameworks modernos.";
 
-if (lowerText.includes("ia") || lowerText.includes("inteligência artificial")) 
+if (matchKeywords(lowerText, ["ia", "inteligencia artificial", "machine learning", "aprendizado de maquina"])) 
   reply = "Inteligência Artificial está revolucionando o mundo.";
 
 // Saúde Mental
-if (lowerText.includes("ansiedade")) 
+if (matchKeywords(lowerText, ["ansiedade", "ansioso", "crise de ansiedade"])) 
   reply = "Gerir a ansiedade envolve técnicas de respiração, mindfulness, exercícios físicos e manter uma rotina equilibrada.";
 
-if (lowerText.includes("depressão")) 
+if (matchKeywords(lowerText, ["depressao", "depressivo", "tristeza profunda"])) 
   reply = "Depressão é uma condição mental complexa que pode surgir devido a fatores genéticos, bioquímicos, psicológicos ou sociais. Procurar ajuda profissional é essencial.";
 
-if (lowerText.includes("saúde mental")) 
+if (matchKeywords(lowerText, ["saude mental", "bem estar emocional"])) 
   reply = "Cuidar da saúde mental envolve equilíbrio entre trabalho, descanso, relações sociais e autocuidado.";
 
-if (lowerText.includes("terapia")) 
+if (matchKeywords(lowerText, ["terapia", "psicologo", "psicoterapia"])) 
   reply = "A terapia é um espaço seguro para compreender emoções, desenvolver estratégias e fortalecer o bem-estar.";
 
-if (lowerText.includes("mindfulness")) 
+if (matchKeywords(lowerText, ["mindfulness", "atencao plena", "meditacao"])) 
   reply = "Mindfulness é a prática de atenção plena, que ajuda a reduzir ansiedade e aumentar foco.";
 
 // Desenvolvimento Pessoal
-if (lowerText.includes("autoconhecimento")) 
+if (matchKeywords(lowerText, ["autoconhecimento", "conhecer a si mesmo"])) 
   reply = "Autoconhecimento é a base do desenvolvimento pessoal. Conhecer seus valores e limites fortalece sua identidade.";
 
-if (lowerText.includes("disciplina")) 
+if (matchKeywords(lowerText, ["disciplina", "ser disciplinado"])) 
   reply = "Disciplina é fazer o que precisa ser feito mesmo quando não há motivação. É o alicerce da evolução.";
 
-if (lowerText.includes("resiliência")) 
+if (matchKeywords(lowerText, ["resiliencia", "resiliente"])) 
   reply = "Resiliência é a capacidade de se recuperar diante das dificuldades e aprender com elas.";
 
-if (lowerText.includes("ser forte") || lowerText.includes("homem") || lowerText.includes("mulher")) 
+if (matchKeywords(lowerText, ["ser forte", "forca emocional", "homem forte", "mulher forte"])) 
   reply = "Ser forte envolve desenvolver resiliência, inteligência emocional, disciplina e cuidar da mente e corpo.";
 
-if (lowerText.includes("propósito")) 
+if (matchKeywords(lowerText, ["proposito", "sentido da vida"])) 
   reply = "Ter um propósito claro dá direção e sentido à vida, fortalecendo motivação e resiliência.";
 
 // Produtividade
-if (lowerText.includes("produtividade")) 
+if (matchKeywords(lowerText, ["produtividade", "produtivo", "ser produtivo", "mais produtivo"])) 
   reply = "Produtividade não é fazer mais, mas sim fazer melhor. Foque em prioridades e elimine distrações.";
 
-if (lowerText.includes("pomodoro")) 
+if (matchKeywords(lowerText, ["pomodoro", "tecnica pomodoro"])) 
   reply = "A técnica Pomodoro consiste em ciclos de 25 minutos de foco seguidos de 5 minutos de pausa.";
 
-if (lowerText.includes("organização")) 
+if (matchKeywords(lowerText, ["organizacao", "organizado", "planejamento"])) 
   reply = "Organização é chave para produtividade. Use listas, calendários e defina prioridades.";
 
-if (lowerText.includes("rotina matinal")) 
+if (matchKeywords(lowerText, ["rotina matinal", "manha produtiva"])) 
   reply = "Uma rotina matinal estruturada aumenta energia e foco para o resto do dia.";
 
 // Persuasão e Comunicação
-if (lowerText.includes("persuasão")) 
+if (matchKeywords(lowerText, ["persuasao", "convencer", "influenciar"])) 
   reply = "Persuasão é a arte de comunicar ideias de forma clara e convincente, com empatia e lógica.";
 
-if (lowerText.includes("comunicação eficaz")) 
+if (matchKeywords(lowerText, ["comunicacao eficaz", "boa comunicacao"])) 
   reply = "Comunicação eficaz envolve clareza, empatia e escuta ativa.";
 
-if (lowerText.includes("linguagem corporal")) 
+if (matchKeywords(lowerText, ["linguagem corporal", "postura corporal"])) 
   reply = "A linguagem corporal transmite confiança e credibilidade. Mantenha postura aberta e contato visual.";
 
-if (lowerText.includes("argumentação")) 
+if (matchKeywords(lowerText, ["argumentacao", "argumentar"])) 
   reply = "Argumentação sólida combina lógica, emoção e credibilidade para convencer de forma ética.";
 
 // Procrastinação
-if (lowerText.includes("procrastinação")) 
+if (matchKeywords(lowerText, ["procrastinacao", "adiar tarefas", "deixar para depois"])) 
   reply = "Procrastinação é adiar o que precisa ser feito. Divida tarefas em etapas menores e estabeleça prazos curtos.";
 
-if (lowerText.includes("procrastinação acadêmica")) 
+if (matchKeywords(lowerText, ["procrastinacao academica", "adiar estudos"])) 
   reply = "Procrastinação acadêmica pode ser vencida com planejamento, metas curtas e recompensas.";
 
-if (lowerText.includes("procrastinação no trabalho")) 
+if (matchKeywords(lowerText, ["procrastinacao no trabalho", "adiar trabalho"])) 
   reply = "No trabalho, procrastinação gera estresse. Divida tarefas e elimine distrações digitais.";
 
 // Pornografia
-if (lowerText.includes("pornografia")) 
+if (matchKeywords(lowerText, ["pornografia", "porno", "conteudo adulto"])) 
   reply = "O consumo excessivo de pornografia pode gerar dependência e distorcer expectativas sobre relacionamentos.";
 
-if (lowerText.includes("vício em pornografia")) 
+if (matchKeywords(lowerText, ["vicio em pornografia", "dependencia pornografia"])) 
   reply = "O vício em pornografia pode afetar relacionamentos e autoestima. Buscar equilíbrio é essencial.";
 
-if (lowerText.includes("superar pornografia")) 
+if (matchKeywords(lowerText, ["superar pornografia", "parar pornografia"])) 
   reply = "Superar o consumo excessivo envolve autocontrole, apoio psicológico e novos hábitos saudáveis.";
 
 // Opinião Alheia
-if (lowerText.includes("opinião dos outros")) 
+if (matchKeywords(lowerText, ["opiniao dos outros", "o que os outros pensam"])) 
   reply = "A opinião dos outros não define seu valor. Foque em seus objetivos e pratique autoconfiança.";
 
-if (lowerText.includes("críticas")) 
+if (matchKeywords(lowerText, ["criticas", "receber criticas"])) 
   reply = "Críticas podem ser construtivas ou destrutivas. Aprenda a filtrar e usar apenas o que agrega.";
 
-if (lowerText.includes("comparação")) 
+if (matchKeywords(lowerText, ["comparacao", "comparar-se"])) 
   reply = "Comparar-se constantemente gera insegurança. Cada pessoa tem seu próprio ritmo de evolução.";
 
-if (lowerText.includes("preocupar com pessoas")) 
+if (matchKeywords(lowerText, ["preocupar com pessoas", "importar-se com opiniao"])) 
   reply = "Para parar de se preocupar com a opinião dos outros, concentre-se em seus objetivos e estabeleça limites saudáveis.";
 
     addMessage(reply, "bot");
@@ -287,5 +303,6 @@ sendBtn.addEventListener("click", sendMessage);
 </script>
 </body>
 </html>
+
 
 
