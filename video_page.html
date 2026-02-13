@@ -53,7 +53,17 @@
     <source src="consequência_de_estresse_prolongado.mp4" type="video/mp4">
   </video>
   </div>
-
+    
+<script> const video = document.getElementById("meuVideo"); 
+    window.addEventListener("scroll", () => { 
+        const rect = video.getBoundingClientRect(); 
+        const totalmenteVisivel = rect.top >= 0 && rect.bottom <= window.innerHeight; 
+        if (!totalmenteVisivel) { 
+            video.pause(); // pausa se não estiver totalmente visível } 
+            else { video.play(); // toca se estiver visível 
+                 } 
+                 }); 
+</script>
 <style>
 
 body {
@@ -105,6 +115,7 @@ footer {
  
 </body>
 </html>
+
 
 
 
