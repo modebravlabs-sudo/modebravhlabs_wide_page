@@ -37,7 +37,9 @@
        <p><strong>👉Clique aqui para acessar ebooks e guias exclusivos e turbinar sua mente agora!</strong></p>
        <a href="CPM.html" class="btn-CPM">Saiba Mais</a>
   </div>
-
+<div class="card-cartaz">
+    <img src="cartazCTA.png" alt="Cartaz">
+</div>
   <footer>
     <div class="socials">
       <a href="https://instagram.com/HenryBrain05" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
@@ -223,6 +225,30 @@
         flex-wrap: wrap;
       }
     }
+
+    .card-cartaz {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card-cartaz img {
+    width: 150%;
+    height: 100%;
+    object-fit: cover;
+    animation: mover 5s linear infinite alternate;
+}
+
+@keyframes mover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
   </style>
 
 <!-- Scripts -->
@@ -233,6 +259,7 @@
 
 </body>
 </html>
+
 
 
 
