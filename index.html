@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Modebravhlabs</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="Profile2.jpg" alt="Perfil">
+    <h1>Henrique João</h1>
+    <div class="auth-buttons">
+      <a href="chatbots.html" class="chatbots-btn">💬Olá</a>
+    </div>
+  </header>
+  
+  <nav>
+    <a href="index.html" target="_blank">Início</a>
+    <a href="CPM.html" target="_blank">Livros</a>
+    <a href="video_page.html" target="_blank">Videos</a>
+    <a href="publicacoes.html" target="_blank">Blog</a>
+    <a href="sobre.html" target="_blank">Sobre</a>
+  </nav>
+  
+  <div class="cta-section">
+    <img src="modebravhlabs.png" alt="Cartaz Promocional">
+  </div>
+
+  <div class="card">
+    <h2>Bem-vindo ao Modebravhlabs</h2>
+     <p><strong>Transforme sua mente em uma máquina de foco, produtividade e equilíbrio mental hoje.</strong></p> 
+       <p>Domine a sua mente e seja produtivo com nossos livros, e-books e cursos.</p>
+        <p>Aprenda a criar habitos saudaveis, evoluir, tornar se implacável e respeitado.</p>
+       <p><strong>👉Clique aqui para acessar ebooks e guias exclusivos e turbinar sua mente agora!</strong></p>
+       <a href="CPM.html" class="btn-CPM">Saiba Mais</a>
+  </div>
+<div class="card-cartaz">
+    <img src="CTAcartaz.png" alt="Cartaz">
+</div>
+  <footer>
+    <div class="socials">
+      <a href="https://instagram.com/HenryBrain05" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+      <a href="https://www.youtube.com/@henrybrains" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+      <a href="https://www.linkedin.com/in/modebravhlabs-undefined-5204933ab" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+      <a href="https://www.tiktok.com/@henriquesjoao11" target="_blank">
+   <i class="fa-brands fa-tiktok"></i>
+ </a>
+    </div>
+    <p>&copy; 2026 Modebravhlabs - Todos os direitos reservados.</p>
+  </footer>
+
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-image: url("CMED_fundo.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+   
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #222;
+      color: white;
+    }
+   
+    header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    header h1 {
+      flex: 1;
+      text-align: center;
+      margin: 0;
+    }
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .auth-buttons a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      box-shadow: 0px 4px 12px rgba(173, 216, 230, 0.6);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+.chatbots-btn {
+    position: fixed;
+    z-index: 99999;
+    bottom: 20px;
+    right: 20px;
+    background: blue;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-top: 50px;
+    animation: pulse 1.2s ease-in-out infinite;
+    cursor: pointer;
+}
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+      }
+
+.chatbots-btn:hover {
+    background: rgb(10, 2, 120);
+}
+
+    .card {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      background-image: url("CMED_fundo.png");
+    }
+  
+
+    .card p {
+             color: white;
+                 }
+
+    .card h2 {
+              color: white;
+                  }
+
+
+    .cta-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0px 4px 12px rgba(173, 216, 230, 0.6);
+    }
+    .cta-section a {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+  }
+   
+.btn-CPM {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #0096ff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  animation: mover 1s ease-in-out infinite;
+}
+
+@keyframes mover {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-6px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+   
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .socials {
+      margin-bottom: 10px;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header h1 {
+        margin: 10px 0;
+      }
+      .auth-buttons {
+        justify-content: center;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+
+    .card-cartaz {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.card-cartaz img {
+    width: 100%;
+    animation: mover 5s linear infinite alternate;
+}
+  </style>
+
+<!-- Scripts -->
+ <script src="./script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
