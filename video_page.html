@@ -12,22 +12,7 @@
         <a href="pesquisa.html">🔍</a>
  </nav>
   
-<div class="container">
-  <div class="video-item">
-    <video src="Produtividade.mp4" controls playsinline></video>
-  </div>
-
-  <div class="video-item">
-    <video src="efeito_da_pornografia.mp4" controls playsinline></video>
-  </div>
-  
-  <div class="video-item">
-    <video src="Imagina_sua_mente_como_computador.mp4" controls playsinline></video>
-  </div>
-  
-  <div class="video-item">
-    <video src="Pense_na_ansiedade_como_eletrecidade.mp4" controls playsinline></video>
-  </div>
+<div class="container" id="videoContainer">
 </div>
   
 <nav class="down-side-nav">
@@ -117,6 +102,23 @@ video {
 </style>
 
   <script>
+const container = document.getElementById("videoContainer");
+
+let savedVideos = JSON.parse(localStorage.getItem("uploadedVideos")) || [];
+
+savedVideos.forEach(videoSrc => {
+    const videoItem = document.createElement("div");
+    videoItem.classList.add("video-item");
+
+    const video = document.createElement("video");
+    video.src = videoSrc;
+    video.controls = true;
+    video.playsInline = true;
+
+    videoItem.appendChild(video);
+    container.appendChild(videoItem);
+});
+
 const videos = document.querySelectorAll("video");
 
 const observer = new IntersectionObserver((entries) => {
@@ -127,14 +129,10 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.pause();
     }
   });
-}, {
-  threshold: 0.6 // 60% visível já toca
-});
+}, { threshold: 0.6 });
 
-videos.forEach(video => {
-  observer.observe(video);
-});
-</script>
+videos.forEach(video => observer.observe(video));
+  </script>
                                           </script>
 <nav>
     <a href="CPM.html" target="_blank">Anterior</a>
@@ -146,6 +144,7 @@ videos.forEach(video => {
   </footer>
 </body>
 </html>
+
 
 
 
