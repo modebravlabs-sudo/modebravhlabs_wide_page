@@ -9,12 +9,10 @@
 <body>
   <header>
     <h1>Publicações</h1>
-    <nav>
-      <ul>
-        <li><a href="#publicacoes">Publicações</a></li>
-        <li><a href="#usuarios">Usuários</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-      </ul>
+    <nav class="nav-container">
+      <a href="#publicacoes">Publicações</a></li>
+        <a href="#usuarios">Usuários</a></li>
+        <a href="#sobre">Sobre</a>
     </nav>
   </header>
 
@@ -54,20 +52,6 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-  }
 
   nav a {
     display: block;
@@ -132,6 +116,7 @@ document.getElementById("new-post-form").addEventListener("submit", function(e) 
   </script>
 </body>
 </html>
+
 
 
 
